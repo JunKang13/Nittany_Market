@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+<!-- Custom Styles -->
+<link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+<script>
+		function mySubmit(form){
+		<!--定义formData对象-->
+			let formData = new FormData(form);
+			<!--利用fromData对象的get方法获取表单数据-->
+			let email = formData.get('email');
+			let pwd = formData.get('password');
+            _url = location.href;
+            _url+="&email="+email+"&pwd="+pwd;
+            return _url
+
+		}
+
+        function insertParam(key, value)
+            {
+                 key = encodeURI(key); value = encodeURI(value);
+                 var kvp = document.location.search.substr(1).split('&');
+                 var i=kvp.length; var x; while(i--)
+                 {
+                 x = kvp[i].split('=');
+                 if (x[0]==key)
+                 {
+                 x[1] = value;
+                 kvp[i] = x.join('=');
+                 break;
+                 }
+                 }
+                 if(i<0) {kvp[kvp.length] = [key,value].join('=');}
+                 document.location.search = kvp.join('&');
+            }
+</script>
+<!-- Page title -->
+<title>Login</title>
+</head>
+<body>
+
+<!-- page background -->
+<div id="login-bg" class="container-fluid">
+  <div class="bg-color"></div>
+</div>
+
+<!-- login div -->
+<div class="container" id="login">
+    <!-- center aligned -->
+	<div class="row justify-content-center">
+    <!-- cast the size -->
+	<div class="col-lg-8">
+	  <div class="login">
+        <!-- box title -->
+		<h1>Login</h1>
+            <!-- log in form, bind with the login method-->
+            <form action="/login" method="post">
+            <!-- email and password field-->
+            <div class="form-group">{{ msg }}
+              <input name="email" type="email" class="form-control" id="eml" aria-describedby="emailHelp" placeholder="Enter email">
+
+            </div>
+            <div class="form-group">
+              <input name="password" type="password" class="form-control" id="pwd" placeholder="Enter password">
+            </div>
+
+            <div class="form-check">
+              <!-- define slider to switch whether to remember the user session -->
+              <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+              </label>
+              <!-- remember me slider-->
+              <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+              <!-- forgot password label, could be clicked-->
+              <label class="forgot-password"><a href="#">Forgot Password?</a></label>
+
+            </div>
+			  
+            <br>
+            <!-- submit button -->
+            <button type="submit" class="btn btn-lg btn-block " onclick="insertParam('aaa','bbb')">Sign In</button>
+          </form>
+
+    </div>
+	</div>
+	</div>
+</div>
+
+</body>
+</html>

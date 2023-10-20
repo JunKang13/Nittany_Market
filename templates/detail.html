@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Detail</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+
+
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src = "../static/jquery/jquery-3.6.0.js"></script>
+        <script>
+            function geturl(){
+                var u = window.location.href.split('/')[4];
+                $('#uinfo123').val(u);
+                document.xiangqing.submit()
+            }
+
+            function total(){
+                var a = document.getElementById('quan').value;
+                var q = {{item['quantity']}};
+                if (a > q){
+                    $('#quan').val(q);
+                    a = document.getElementById('quan').value;
+                }
+
+                if (a < 0){
+                    $('#quan').val(0);
+                    a = document.getElementById('quan').value;
+                }
+                var price = document.getElementById('p').innerText.split('$')[1];
+                $('#tot').text('Total: $' + (a*price).toFixed(1));
+            }
+
+            function set(){
+                var q = document.getElementById('q').innerText.split(':')[1].split(')')[0];
+                if (q <= 0) {
+                    alert('This Product is not available!')
+                    $('#quan').val(0);
+                    $('#tot').text('Total: $0.0');
+                }
+            }
+
+            $('#exampleModal').on('show.bs.modal', function (event) {
+              var button = $(event.relatedTarget) // Button that triggered the modal
+              var recipient = button.data('whatever') // Extract info from data-* attributes
+              // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+              // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+              var modal = $(this)
+              modal.find('.modal-title').text('New message to ' + recipient)
+              modal.find('.modal-body input').val(recipient)
+            })
+
+            function addc(){
+                var c = document.getElementById('cselect');
+                var credit = document.getElementById('credit');
+                var dd = document.getElementById('dd');
+                var cvv = document.getElementById('cvv');
+                var ind = c.selectedIndex;
+                if (c.options[ind].value === 'Add New'){
+                    credit.style.visibility = 'visible';
+                    credit.style.display = '';
+                    dd.style.visibility = 'visible';
+                    dd.style.display = '';
+                    cvv.style.visibility = 'visible';
+                    cvv.style.display = '';
+                }
+                else {
+                    credit.style.visibility = 'hidden';
+                    credit.style.display = 'none';
+                    dd.style.visibility = 'hidden';
+                    dd.style.display = 'none';
+                    cvv.style.visibility = 'hidden';
+                    cvv.style.display = 'none';
+                }
+            }
+
+            function buy(){
+                var a = document.getElementById('quan').value;
+                $("#quantity123").val(a);
+                var price = document.getElementById('p').innerText.split('$')[1];
+                $('#pay123').val(a*price);
+                document.tijiao.submit()
+            }
+            function gwcgwc(){
+                var a = document.getElementById('quan').value;
+                $("#gwc123").val(a);
+                var price = document.getElementById('p').innerText.split('$')[1];
+                $('#gwc124').val(a*price);
+                document.jiarugwc.submit()
+            }
+
+        </script>
+	</head>
+	<body onload="set()">
+	<!-- start header -->
+		<header>
+			<div class="top center">
+				<div class="left fl">
+					<ul>
+						<li><a href="http://www.mi.com/" target="_blank">Nittany Market</a></li>
+						<li>|</li>
+						<li><a href="">Nittany State</a></li>
+						<li>|</li>
+						<li><a href="">Nittany Eats</a></li>
+						<li>|</li>
+						<li><a href="">Nittany Game</a></li>
+						<li>|</li>
+						<li><a href="">Nittany Cloud</a></li>
+						<li>|</li>
+						<li><a href="">Nittany Mobile</a></li>
+						<li>|</li>
+						<li><a href="">Report</a></li>
+						<li>|</li>
+						<li><a href="">Select Region</a></li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<div class="right fr">
+					<div class="gouwuche fr"><a href="">Shopping Cart</a></div>
+					<div class="fr">
+						<ul>
+							<li><a target="_blank">Hi, {{ name.split()[0] }}</a></li>
+							<li>|</li>
+							<li><a href="/">Log Out</a></li>
+						</ul>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</header>
+	<!--end header -->
+<!-- start banner_x -->
+		<div class="banner_x center">
+			<a href="./index.html" target="_blank"><div class="logo fl" style="margin-left: -655px"></div></a>
+			<a href=""><div class="ad_top fl"></div></a>
+			<div class="nav fl" style="margin-top: -100px; margin-left: 300px">
+				<ul>
+					<li><a href="./liebiao.html" target="_blank">Electrical Supplies</a></li>
+					<li><a href="">Clothing</a></li>
+					<li><a href="">Health Care</a></li>
+					<li><a href="">Pets</a></li>
+					<li><a href="">Sports & Outdoors</a></li>
+					<li><a href="">Grocery</a></li>
+				</ul>
+			</div>
+			<div class="search fr" style="margin-top: -100px;">
+				<form action="" method="post">
+					<div class="text fl">
+						<input type="text" class="shuru"  placeholder="iPhone 13">
+					</div>
+					<div class="submit fl">
+						<input type="submit" class="sousuo" value="Search"/>
+					</div>
+					<div class="clear"></div>
+				</form>
+				<div class="clear"></div>
+			</div>
+		</div>
+<!-- end banner_x -->
+
+	
+	<!-- xiangqing -->
+	<form action="post" method="">
+	<div class="xiangqing">
+		<div class="neirong w">
+			<div class="xiaomi6 fl" style="margin-left: -870px">{{item['title']}} {{ item['product_name'] }}</div>
+			<nav class="fr">
+                <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1" style="background: #4da6ff">Comments Review</button></li>
+                <li>|</li>
+				<li><a href="">#{{ item['listing_id'] }}</a></li>
+				<div class="clear"></div>
+			</nav>
+			<div class="clear"></div>
+		</div>	
+	</div>
+	
+	<div class="jieshao mt20 w">
+		<div class="left fl"><img src="../static/img/unkno.gif"></div>
+		<div class="right fr">
+			<div class="h3 ml20 mt20">{{item['title']}} {{ item['product_name'] }}</div>
+			<div class="jianjie mr40 ml20 mt10">{{item['product_description']}}</div>
+			<div class="jiage ml20 mt10" id="p">${{ item['price'] }}</div>
+			<div class="ft20 ml20 mt20" id = "q">Quantity (Stock: {{ item['quantity'] }})</div>
+			<div class="xzbb ml20 mt10">
+				<div class="banben fl">
+					<form>
+                        <input onchange="total()" id="quan" type="number" min="0" max="{{ item['quantity'] }}" class="banben fl" value="1" style="border: none; font-size: 26px; text-align: center; font-weight: bolder">
+                    </form>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="xqxq mt20 ml20">
+				<div class="top1 mt10">
+					<div class="left1 fl">{{item['title']}} {{ item['product_name'] }}</div>
+					<div class="right1 fr">${{ item['price'] }}</div>
+					<div class="clear"></div>
+				</div>
+				<div class="bot mt20 ft20 ftbc" id="tot">Total：${{ item['price']}}</div>
+			</div>
+			<div class="xiadan ml20 mt20">
+					<input class="jrgwc"  type="button" name="jrgwc" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" value="Buy Now" />
+					<input class="jrgwc" type="button" name="jrgwc" onclick="gwcgwc()" value="Add to Shopping Cart" />
+
+			</div>
+            <form action="/detail/gwc" method="post" name="jiarugwc">
+                <input type="hidden" name="buyeremailgwc" value="{{ info['email'] }}">
+                <input type="hidden" name="lid" value="{{ lid }}" id="uinfo123"/>
+                <input type="hidden" name="s" value="{{ info['first_name'] }}" id="uinfo124"/>
+                <input type="hidden" name="lidgwc" value="{{ lid }}">
+                <input type="hidden" name="quantitygwc" value="q" id="gwc123">
+                <input type="hidden" name="paygwc" value="p" id="gwc124">
+                <input type="hidden" name="productnamegwc" value="{{ item['title'] }} {{ item['product_name'] }}">
+            </form>
+		</div>
+		<div class="clear"></div>
+	</div>
+	</form>
+	<!-- footer -->
+		<footer class="mt20 center">
+			<div class="mt20">Nittany Market|Nittany State|Nittany Eats|Nittany Game|Nittany Cloud|Nittany Mobile|Report|Select Region</div>
+			<div>©nittanymarket.com </div>
+			<div>Report：(909)-852-9496，All for test purpose</div>
+		</footer>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Buy Request</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form name="tijiao" method="post" action="/detail/b">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Credit Card:</label>
+              <select id="cselect" onchange="addc()">
+                  <option>Selection</option>
+                  {%  for i in credit %}
+                  <option>************{{ i['credit_card_num'][-4:] }}</option>
+                  {%  endfor %}
+                  <option>Add New</option>
+              </select>
+          <input type="hidden" name="s" value="{{ info['first_name'] }}" id="uinfo124"/>
+            <input type="number" class="form-control" id="credit" style="display: none; visibility: hidden" placeholder="Card Number" name="newcredit">
+            <input type="text" class="form-control" id="dd" style="display: none; visibility: hidden" placeholder="MM/YYYY" name="newdd">
+            <input type="text" class="form-control" id="cvv" style="display: none; visibility: hidden" placeholder="CVV" name="newcvv">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Deliver To:</label>
+            <select id="aselect">
+                  <option>Selection</option>
+                  <option>{{home['street_num']}} {{ home['street_name'] }}</option>
+            </select>
+          </div>
+            <div>
+                <input type="hidden" name="selleremail" value="{{ item['seller_email'] }}" id="selleremail123"/>
+                <input type="hidden" name="lid" value="{{ lid }}" id="lid123"/>
+                <input type="hidden" name="buyeremail" value="{{ info['email'] }}" id="buyeremail123"/>
+                <input type="hidden" name="quantity" value="quantity" id="quantity123"/>
+                <input type="hidden" name="totalquantity" value="{{item['quantity']}}" id="totalquantity123"/>
+                <input type="hidden" name="pay" value="pay" id="pay123"/>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="buy()">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Reviews</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          {% for i in review %}
+        <p> {{ i['buyer_email']}} </br> {{ i['review_desc'] }} </p>
+          {% endfor %}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+	</body>
+</html>

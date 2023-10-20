@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Personal Info</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src = "../static/jquery/jquery-3.6.0.js"></script>
+         <script>
+
+            function prompt(){
+                alert('Cannot Edit for now');
+            }
+
+            function change(){
+                var pwd = prompt("Please enter your new password");
+                if (pwd != null){
+                    alert("Success!\rYou will be directed to the login page!")
+                }
+                $('#uinfo123').val(pwd)
+                document.xiugaimima.submit()
+            }
+            function myinfo(){
+                var div3 = document.getElementById('t3');
+                div3.style.visibility = 'hidden';
+                div3.style.display = 'none';
+
+                var div = document.getElementById('t1');
+                div.style.visibility = 'visible';
+                div.style.display = '';
+
+                var div4 = document.getElementById('t4');
+                div4.style.visibility = 'hidden';
+                div4.style.display = 'none';
+
+                var ord = document.getElementById('ord');
+                ord.style.fontWeight = 'normal';
+                ord.style.color = '#000'
+
+                var carts = document.getElementById('carts');
+                carts.style.fontWeight = 'normal';
+                carts.style.color = '#000'
+
+                var info = document.getElementById('infosel');
+                info.style.color = '#ff6700';
+                info.style.fontWeight = 'bold';
+            }
+
+
+            function orders(){
+
+                var div = document.getElementById('t1');
+                div.style.visibility = 'hidden';
+                div.style.display = 'none';
+
+                var div3 = document.getElementById('t3');
+                div3.style.visibility = 'visible';
+                div3.style.display = '';
+
+                var div4 = document.getElementById('t4');
+                div4.style.visibility = 'hidden';
+                div4.style.display = 'none';
+
+                var carts = document.getElementById('carts');
+                carts.style.fontWeight = 'normal';
+                carts.style.color = '#000'
+
+                var info = document.getElementById('infosel');
+                info.style.color = '#000';
+                info.style.fontWeight = 'normal';
+
+                var ord = document.getElementById('ord');
+                ord.style.fontWeight = 'bold';
+                ord.style.color = '#ff6700'
+
+            }
+
+            function spcart(){
+                var div = document.getElementById('t1');
+                div.style.visibility = 'hidden';
+                div.style.display = 'none';
+
+                var div3 = document.getElementById('t3');
+                div3.style.visibility = 'hidden';
+                div3.style.display = 'none';
+
+                var div4 = document.getElementById('t4');
+                div4.style.visibility = 'visible';
+                div4.style.display = '';
+
+                var carts = document.getElementById('carts');
+                carts.style.fontWeight = 'bold';
+                carts.style.color = '#ff6700'
+
+                var info = document.getElementById('infosel');
+                info.style.color = '#000';
+                info.style.fontWeight = 'normal';
+
+                var ord = document.getElementById('ord');
+                ord.style.fontWeight = 'normal';
+                ord.style.color = '#000'
+            }
+
+            $(document).click(function (e){
+              var v_id=e.target.id;
+              if (v_id.endsWith('gwc')){
+                  var info1 = v_id.split('/');
+                  $('#cid123').val(info1[0]);
+                  document.shanchugwc.submit();
+              }
+              if (v_id.length > 15){
+                  var info = v_id.split('/');
+                  $('#selleremail123r').val(info[0]);
+                  $('#lid123r').val(info[1]);
+                  $('#buyeremail123r').val(info[2]);}
+            });
+
+            function reviewr(){
+                document.review123.submit();
+            }
+
+        </script>
+	</head>
+	<body onload="a() ">
+	<!-- start header -->
+		<header>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Buy Request</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form name="review123" method="post" action="/info/r">
+                <input type="hidden" name="selleremailr" value="234" id="selleremail123r"/>
+                <input type="hidden" name="buyeremailr" value="123" id="buyeremail123r"/>
+                <input type="hidden" name="lidr" value="lid" id="lid123r"/>
+Seller Ratings: <input type="number" min="1" max="5" name="ratpo" placeholder="1" id="ratpo123"/>
+        </br>
+                Product Descriptions: <input type="text" name="descr" placeholder="Product Descriptions" id="desc123r"/>
+
+        </form>
+          </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" onclick="reviewr()">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+			<div class="top center">
+				<div class="left fl">
+					<ul>
+						<li><a href="" target="_blank">Nittany Market</a></li>
+						<li>|</li>
+						<li><a href="">Nittany State</a></li>
+						<li>|</li>
+						<li><a href="">Nittany Eats</a></li>
+						<li>|</li>
+						<li><a href="">Nittany Game</a></li>
+						<li>|</li>
+						<li><a href="">Nittany Cloud</a></li>
+						<li>|</li>
+						<li><a href="">Nittany Mobile</a></li>
+						<li>|</li>
+						<li><a href="">Report</a></li>
+						<li>|</li>
+						<li><a href="">Select Region</a></li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<div class="right fr">
+					<div class="gouwuche fr"><a href="/login" onclick="alert('Please Log In')">Shopping Cart</a></div>
+					<div class="fr">
+						<ul>
+							<li><a href="info" target="_blank" id="uinfo1">Hi, {{ name.split()[0] }}</a></li>
+							<li>|</li>
+							<li><a href="/">Log Out</a></li>
+						</ul>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</header>
+	<!--end header -->
+	<!-- start banner_x -->
+		<div class="banner_x center">
+			<a href="./index.html" target="_blank"><div class="logo fl" style="margin-left: -600px"></div></a>
+			<a href=""><div class="ad_top fl"></div></a>
+			<div class="nav fl" style="margin-top: -100px; margin-left: 250px">
+				<ul>
+					<li><a href="./liebiao.html" target="_blank">Electrical Supplies</a></li>
+					<li><a href="">Clothing</a></li>
+					<li><a href="">Health Care</a></li>
+					<li><a href="">Pets</a></li>
+					<li><a href="">Sports & Outdoors</a></li>
+					<li><a href="">Grocery</a></li>
+				</ul>
+			</div>
+			<div class="search fr" style="margin-top: -90px">
+				<form action="" method="post">
+					<div class="text fl">
+						<input type="text" class="shuru"  placeholder="iPhone 13">
+					</div>
+					<div class="submit fl">
+						<input type="submit" class="sousuo" value="Search"/>
+					</div>
+					<div class="clear"></div>
+				</form>
+				<div class="clear"></div>
+			</div>
+		</div>
+<!-- end banner_x -->
+<!-- self_info -->
+	<div class="grzxbj" style="margin-top: 0px">
+		<div class="selfinfo center">
+		<div class="lfnav fl">
+			<div class="ddzx">Orders</div>
+			<div class="subddzx">
+				<ul>
+					<li><a onclick="orders()" id="ord" >My Orders</a></li>
+					<li><a onclick="spcart()" id="carts">Shopping Cart</a></li>
+				</ul>
+			</div>
+			<div class="ddzx">Personal</div>
+			<div class="subddzx">
+				<ul>
+					<li><a onclick="myinfo()"  id="infosel" style="color:#ff6700;font-weight:bold;">My Info</a></li>
+					<li><a href="">Messages</a></li>
+					<li><a href="">Coupons</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="rtcont fr" id="t1">
+			<div class="grzlbt ml40">My Info</div>
+			<div class="subgrzl ml40"><span>ID</span><span id="uinfo2">{{ email }}</span><span><a onclick="change()">Change Password</a></span></div>
+            <form method='post' action='/info1' name="xiugaimima">
+                <input type="hidden" name="pwd" value="pwd" id="uinfo123"/>
+                <input type="hidden" name="email" value= {{ email }} id="uinfoemail"/>
+            </form>
+			<div class="subgrzl ml40"><span>Name</span><span id="uinfo3">{{ name }}</span><span><a href="" onclick="prompt()">Edit</a></span></div>
+			<div class="subgrzl ml40"><span>Age</span><span id="uinfo4">{{ age }}</span><span><a href="" onclick="prompt()">Edit</a></span></div>
+			<div class="subgrzl ml40"><span>Gender</span><span id="uinfo5">{{ gender }}</span><span><a href="" onclick="prompt()">Edit</a></span></div>
+			<div class="subgrzl ml40"><span>Email</span><span id="uinfo6">{{ email }}</span><span><a href="" onclick="prompt()">Edit</a></span></div>
+            <div class="subgrzl ml40"><span>Card</span><span id="uinfo7">************{{ credit }}({{ credit_type }})</span><span><a href="" onclick="prompt()">Edit</a></span></div>
+            <div class="subgrzl ml40"><span>Home</span><span id="uinfo8">{{ home }}</span><span><a href="" onclick="prompt()">Edit</a></span></div>
+            <div class="subgrzl ml40"><span>Bill</span><span id="uinfo9">{{ bill }}</span><span><a href="" onclick="prompt()">Edit</a></span></div>
+			
+		</div>
+        <div class="rtcont fr" id="t3" style="visibility: hidden; display: none">
+			<div class="grzlbt ml40">My Orders</div>
+            {% for i in order %}
+                <div class="subgrzl1 ml40"><span>Name</span><span id="uinfo2">{{ i['transaction_id'] }} {{ i['quantity'] }} {{ i['payment'] }}</span><span><a data-toggle="modal" data-target="#exampleModal" id="{{ i['seller_email'] }}/{{ i['listing_id'] }}/{{ i['buyer_email'] }}">Review&Comment</a></span></div>
+            {% endfor %}
+		</div>
+
+        <form name="shanchugwc" action="/info/g" method="post">
+            <input type="hidden" name="cid" id="cid123" value="cid">
+        </form>
+
+        <div class="rtcont fr" id="t4" style="visibility: hidden; display: none">
+			<div class="grzlbt ml40">Shopping Cart</div>
+            {% for i in cart %}
+                <div class="subgrzl1 ml40"><span>Product</span><span id="uinfo2">{{ i['product_name'] }} {{ i['quantity'] }} {{ i['payment'] }}</span><span><a id="{{ i['cid'] }}/gwc">Remove</a></span></div>
+            {% endfor %}
+
+		</div>
+		<div class="clear"></div>
+		</div>
+	</div>
+    <footer class="mt20 center">
+			<div class="mt20">Nittany Market|Nittany State|Nittany Eats|Nittany Game|Nittany Cloud|Nittany Mobile|Report|Select Region</div>
+			<div>©nittanymarket.com </div>
+			<div>Report：(909)-852-9496，All for test purpose</div>
+		</footer>
+	</body>
+</html>

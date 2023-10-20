@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Nittany Market</title>
+		<link rel="stylesheet" type="text/css" href="../../../../../../../../../../../../static/css/style.css">
+        <script src = "../../../../../../../../../../../../static/jquery/jquery-3.6.0.js"></script>
+        <script>
+          function  to () {
+              var query = window.location.href
+              var vars = query.split("/");
+              window.location.href = "/info1/";
+              $('#uinfo1').text(vars[variable])
+          }
+
+            function getQueryVariable(variable)
+            {
+                   var query = window.location.href
+                   var vars = query.split("/");
+                   //$('#uinfo').text("Hi, "+vars[variable])
+            }
+
+            $(document).click(function (e){
+              var v_id=e.target.innerText;
+              if (!v_id.startsWith('Hi') && !(v_id.length == 0) && !v_id.startsWith('Shopping')){
+
+              $("#uinfo123").val(v_id);
+              document.kanlei.submit();}
+            });
+
+          function sou(){
+              var s = document.getElementById('sousuo1');
+          }
+
+            function ap(){
+              var f = document.getElementById('xianshi');
+              f.style.display = '';
+              f.style.visibility = 'visible';
+          }
+
+        </script>
+        <style>
+    .basic-grey {
+    margin-left:auto;
+    margin-right:auto;
+    max-width: 500px;
+    background: #F7F7F7;
+    padding: 25px 15px 25px 10px;
+    font: 12px Georgia, "Times New Roman", Times, serif;
+    color: #888;
+    text-shadow: 1px 1px 1px #FFF;
+    border:1px solid #E4E4E4;
+}
+.basic-grey h1 {
+    font-size: 25px;
+    padding: 0px 0px 10px 40px;
+    display: block;
+    border-bottom:1px solid #E4E4E4;
+    margin: -10px -15px 30px -10px;;
+    color: #888;
+}
+.basic-grey h1>span {
+    display: block;
+    font-size: 11px;
+}
+.basic-grey label {
+    display: block;
+    margin: 0px;
+}
+.basic-grey label>span {
+    float: left;
+    width: 20%;
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 10px;
+    color: #888;
+}
+.basic-grey input[type="text"], .basic-grey input[type="email"], .basic-grey textarea, .basic-grey select {
+    border: 1px solid #DADADA;
+    color: #888;
+    height: 30px;
+    margin-bottom: 16px;
+    margin-right: 6px;
+    margin-top: 2px;
+    outline: 0 none;
+    padding: 3px 3px 3px 5px;
+    width: 70%;
+    font-size: 12px;
+    line-height:15px;
+    box-shadow: inset 0px 1px 4px #ECECEC;
+    -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+    -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+.basic-grey textarea{
+    padding: 5px 3px 3px 5px;
+}
+.basic-grey select {
+    background: #FFF url('down-arrow.png') no-repeat right;
+    background: #FFF url('down-arrow.png') no-repeat right);
+    appearance:none;
+    -webkit-appearance:none;
+    -moz-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+    width: 70%;
+    height: 35px;
+    line-height: 25px;
+}
+.basic-grey textarea{
+    height:100px;
+}
+.basic-grey .button {
+    background: #E27575;
+    border: none;
+    padding: 10px 25px 10px 25px;
+    color: #FFF;
+    box-shadow: 1px 1px 5px #B6B6B6;
+    border-radius: 3px;
+    text-shadow: 1px 1px 1px #9E3F3F;
+    cursor: pointer;
+}
+.basic-grey .button:hover {
+    background: #CF7A7A
+}
+
+</style>
+	</head>
+	<body onload="getQueryVariable(5)">
+	<!-- start header -->
+		<header>
+            <div>
+                <form method='post' action='/list/' name="kanlei">
+                    <input type="hidden" name="cat" value="cat" id="uinfo123"/>
+                </form>
+            </div>
+			<div class="top center">
+				<div class="left fl">
+					<ul>
+						<li><a href="http://www.google.com/" target="_blank">Nittany Market</a></li>
+						<li>|</li>
+						<li><a href="">Nittany State</a></li>
+						<li>|</li>
+						<li><a href="">Nittany Eats</a></li>
+						<li>|</li>
+						<li><a href="">Nittany Game</a></li>
+						<li>|</li>
+						<li><a href="">Nittany Cloud</a></li>
+						<li>|</li>
+						<li><a href="">Nittany Mobile</a></li>
+						<li>|</li>
+						<li><a href="">Report</a></li>
+						<li>|</li>
+						<li><a href="">Select Region</a></li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<div class="right fr">
+					<div class="gouwuche fr"><a onclick="alert('Under Info Page => Shopping Cart')">Shopping Cart</a></div>
+					<div class="fr">
+						<ul>
+
+                            <li><a target="_blank" id="uinfo" onclick="to()">Hi, {{ name }}</a></li>
+							<li>|</li>
+							<li><a href="/">Log Out</a></li>
+						</ul>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</header>
+	<!--end header -->
+
+<!-- start banner_x -->
+		<div class="banner_x center">
+			<a href="./index.html" target="_blank"><div class="logo fl"></div></a>
+			<a href=""><div class="ad_top fl"></div></a>
+			<div class="nav fl">
+				<ul>
+					<li><a href="./liebiao.html" target="_blank">Electrical Supplies</a></li>
+					<li><a href="">Clothing</a></li>
+					<li><a href="">Health Care</a></li>
+					<li><a href="">Pets</a></li>
+					<li><a href="">Sports & Outdoors</a></li>
+					<li><a href="">Grocery</a></li>
+				</ul>
+			</div>
+			<div class="search fr">
+				<form action="/list/s" method="post">
+					<div class="text fl">
+						<input type="text" class="shuru" id="sousuo1" name="sousuo1" placeholder="iPhone 13">
+					</div>
+					<div class="submit fl">
+						<input type="submit" class="sousuo" onclick="sou()"  value="Search"/>
+					</div>
+					<div class="clear"></div>
+				</form>
+				<div class="clear"></div>
+			</div>
+		</div>
+<!-- end banner_x -->
+
+	<!-- start banner_y -->
+        <div class="xiadan ml20 mt20">
+        <h3 style="margin-left: 150px; color: #80bfff">All Categories<input onclick="ap()" style="margin-left: 887px" class="jrgwc"  type="button" name="jrgwc" value="List New Products"/></h3>
+        </div>
+		<div>
+        <div class="banner_y1 center">
+			<div class="nav">
+				<ul>
+                    {% for i in data[0:7] %}
+					<li>
+						<a>{{ i['parent'] }}</a>
+                        <div class="pop">
+							<div class="left fl">
+								<div>
+									<div class="xuangou_left fl">
+                                        {% for o in sub[i['parent']] %}
+										<a>
+											<span class="fl" id="c" >{{ o['category_name'] }}</span>
+											<div class="clear"></div>
+										</a>{% endfor %}
+									</div>
+									<div class="clear"></div>
+								</div>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="banner_y2 center">
+			<div class="nav">
+				<ul>
+                    {% for i in data[7:14] %}
+					<li>
+						<a>{{ i['parent'] }}</a>
+                        <div class="pop">
+							<div class="left fl">
+								<div>
+									<div class="xuangou_left fl">
+                                        {% for o in sub[i['parent']] %}
+										<a>
+											<span class="fl">{{ o['category_name'] }}</span>
+											<div class="clear"></div>
+										</a>{% endfor %}
+									</div>
+									<div class="clear"></div>
+								</div>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+
+
+
+    <div class="banner_y3 center">
+			<div class="nav">
+				<ul>
+                    {% for i in data[14:20] %}
+					<li>
+						<a>{{ i['parent'] }}</a>
+                        <div class="pop">
+							<div class="left fl">
+								<div>
+									<div class="xuangou_left fl">
+                                        {% for o in sub[i['parent']] %}
+										<a>
+											<span class="fl">{{ o['category_name'] }}</span>
+											<div class="clear"></div>
+										</a>{% endfor %}
+									</div>
+									<div class="clear"></div>
+								</div>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="banner_y4 center">
+			<div class="nav">
+				<ul>
+                    {% for i in data[20:26] %}
+					<li>
+						<a>{{ i['parent'] }}</a>
+                        <div class="pop">
+							<div class="left fl">
+								<div>
+									<div class="xuangou_left fl">
+                                        {% for o in sub[i['parent']] %}
+										<a >
+											<span class="fl">{{ o['category_name'] }}</span>
+											<div class="clear"></div>
+										</a>{% endfor %}
+									</div>
+									<div class="clear"></div>
+								</div>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="banner_y5 center">
+			<div class="nav">
+				<ul>
+                    {% for i in data[26:] %}
+					<li>
+						<a>{{ i['parent'] }}</a>
+                        <div class="pop">
+							<div class="left fl">
+								<div>
+									<div class="xuangou_left fl">
+                                        {% for o in sub[i['parent']] %}
+										<a >
+											<span class="fl">{{ o['category_name'] }}</span>
+											<div class="clear"></div>
+										</a>{% endfor %}
+									</div>
+									<div class="clear"></div>
+								</div>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <form id="xianshi" action="/index2/s" method="post" class="basic-grey" style="visibility: hidden; display: none">
+    <h1>List Form
+        <span>Please fill all the texts in the fields.</span>
+    </h1>
+    <label>
+        <span>Your email :</span>
+        <input id="email" type="email" name="email123" placeholder="Valid Email Address" />
+    </label>
+    <label>
+        <span>Parent Category :</span>
+        <input id="parent123" type="text" name="parent123" placeholder="Tv" />
+    </label>
+
+    <label>
+        <span>Sub Category :</span>
+        <input id="sub123" type="text" name="sub123" placeholder="55-Inch Tvs" />
+    </label>
+
+    <label>
+        <span>Title :</span>
+        <input id="title123" type="text" name="title123" placeholder="" />
+    </label>
+
+    <label>
+        <span>Product Name :</span>
+        <input id="name123" type="text" name="name123" placeholder="" />
+    </label>
+
+    <label>
+        <span>Price :</span>
+        <input id="price123" type="number" name="price123" placeholder="0.00" />
+    </label>
+        <br/>
+
+    <label>
+        <span>Quantity :</span>
+        <input id="quantity123" type="number" name="quantity123" placeholder="1" />
+    </label>
+        <br/>
+
+    <label>
+        <span>Description :</span>
+        <textarea id="des123" name="des123" placeholder="Product Description"></textarea>
+    </label>
+
+    <label>
+        <span>&nbsp;</span>
+        <input type="submit" class="button" onclick="alert('Success!')" value="Send" />
+    </label>
+</form>
+    <div>
+        <img src="../../../../../../../../../../static/img/slider.png" style="margin-left: 150px; width: 1220px">
+    </div>
+
+		<div class="sub_banner center">
+			<div class="sidebar fl">
+				<div class="fl"><a href=""><img src="../../../../../../../../../../../../static/img/hjh_01.gif"></a></div>
+				<div class="fl"><a href=""><img src="../../../../../../../../../../../../static/img/hjh_01.gif"></a></div>
+				<div class="fl"><a href=""><img src="../../../../../../../../../../../../static/img/hjh_01.gif"></a></div>
+				<div class="fl"><a href=""><img src="../../../../../../../../../../../../static/img/hjh_01.gif"></a></div>
+				<div class="fl"><a href=""><img src="../../../../../../../../../../../../static/img/hjh_01.gif"></a></div>
+				<div class="fl"><a href=""><img src="../../../../../../../../../../../../static/img/hjh_01.gif"></a></div>
+				<div class="clear"></div>
+			</div>
+			<div class="datu fl"><a href=""><img src="../../../../../../../../../../../../static/img/huodongdatu.png" alt=""></a></div>
+			<div class="datu fl"><a href=""><img src="../../../../../../../../../../../../static/img/huodongdatu.png" alt=""></a></div>
+			<div class="datu fr"><a href=""><img src="../../../../../../../../../../../../static/img/huodongdatu.png" alt=""></a></div>
+			<div class="clear"></div>
+
+
+		</div>
+	<!-- end banner -->
+
+	<!-- start danpin
+		<div class="danpin center">
+			
+			<div class="biaoti center">On Sale</div>
+			<div class="main center">
+				<div class="mingxing fl">
+					<div class="sub_mingxing"><a href=""><img src="../../../../../../../../../../../../static/img/mingxing1.jpg" alt=""></a></div>
+					<div class="pinpai"><a href="">iPhone 13 Pro Max</a></div>
+					<div class="youhui">Free Delivery</div>
+					<div class="jiage">$1100</div>
+				</div>
+				<div class="mingxing fl">
+					<div class="sub_mingxing"><a href=""><img src="../../../../../../../../../../../../static/img/mingxing2.jpg" alt=""></a></div>
+					<div class="pinpai"><a href="">Samsung Galaxy S22</a></div>
+					<div class="youhui">Free Delivery</div>
+					<div class="jiage">$850</div>
+				</div>
+				<div class="mingxing fl">
+					<div class="sub_mingxing"><a href=""><img src="../../../../../../../../../../../../static/img/mingxing1.jpg" alt=""></a></div>
+					<div class="pinpai"><a href="">iPhone 13 Pro Max</a></div>
+					<div class="youhui">Free Delivery</div>
+					<div class="jiage">$1100</div>
+				</div>
+				<div class="mingxing fl"> 	
+					<div class="sub_mingxing"><a href=""><img src="../../../../../../../../../../../../static/img/mingxing2.jpg" alt=""></a></div>
+					<div class="pinpai"><a href="">Samsung Galaxy S22</a></div>
+					<div class="youhui">Free Delivery</div>
+					<div class="jiage">$850</div>
+				</div>
+				<div class="mingxing fl">
+					<div class="sub_mingxing"><a href=""><img src="../../../../../../../../../../../../static/img/mingxing1.jpg" alt=""></a></div>
+					<div class="pinpai"><a href="">iPhone 13 Pro Max</a></div>
+					<div class="youhui">Free Delivery</div>
+					<div class="jiage">$1100</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>-->
+		<footer class="mt20 center">			
+			<div class="mt20">Nittany Market|Nittany State|Nittany Eats|Nittany Game|Nittany Cloud|Nittany Mobile|Report|Select Region</div>
+			<div>©nittanymarket.com </div>
+			<div>Report：(909)-852-9496，All for test purpose</div>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Nittany Market</title>
+		<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+        <script>
+            function to(){
+                window.location.href('/list/')
+            }
+        </script>
+	</head>
+	<body>
+	<!-- start header -->
+		<header>
+			<div class="top center">
+				<div class="left fl">
+					<ul>
+						<li><a href="http://www.google.com/" target="_blank">Nittany Market</a></li>
+						<li>|</li>
+						<li><a href="">Nittany State</a></li>
+						<li>|</li>
+						<li><a href="">Nittany Eats</a></li>
+						<li>|</li>
+						<li><a href="">Nittany Game</a></li>
+						<li>|</li>
+						<li><a href="">Nittany Cloud</a></li>
+						<li>|</li>
+						<li><a href="">Nittany Mobile</a></li>
+						<li>|</li>
+						<li><a href="">Report</a></li>
+						<li>|</li>
+						<li><a href="">Select Region</a></li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<div class="right fr">
+					<div class="gouwuche fr"><a href="/login" onclick="alert('Please Log In')">Shopping Cart</a></div>
+					<div class="fr">
+						<ul>
+							<li><a href="login" target="_blank">Hi, {{ name }}</a></li>
+							<li>|</li>
+							<li><a href="/">Log Out</a></li>
+						</ul>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</header>
+	<!--end header -->
+
+<!-- start banner_x -->
+		<div class="banner_x center">
+			<a href="./index.html" target="_blank"><div class="logo fl"></div></a>
+			<a href=""><div class="ad_top fl"></div></a>
+			<div class="nav fl">
+				<ul>
+					<li><a href="./liebiao.html" target="_blank">Electrical Supplies</a></li>
+					<li><a href="">Clothing</a></li>
+					<li><a href="">Health Care</a></li>
+					<li><a href="">Pets</a></li>
+					<li><a href="">Sports & Outdoors</a></li>
+					<li><a href="">Grocery</a></li>
+				</ul>
+			</div>
+			<div class="search fr">
+				<form action="" method="post">
+					<div class="text fl">
+						<input type="text" class="shuru"  placeholder="iPhone 13">
+					</div>
+					<div class="submit fl">
+						<input type="submit" class="sousuo" value="Search"/>
+					</div>
+					<div class="clear"></div>
+				</form>
+				<div class="clear"></div>
+			</div>
+		</div>
+<!-- end banner_x -->
+
+
+	<!-- start banner_y -->
+	<!-- end banner -->
+
+    <div>
+    <h3 style="margin-left: 150px; color: #80bfff">All Categories</h3>
+        <div class="banner_y1 center">
+			<div class="nav">
+				<ul>
+                    {% for i in data[0:7] %}
+					<li>
+						<a href="">{{ i['parent'] }}</a>
+                        <div class="pop">
+							<div class="left fl">
+								<div>
+									<div class="xuangou_left fl">
+                                        {% for o in sub[i['parent']] %}
+										<a href="/list/">
+											<span class="fl">{{ o['category_name'] }}</span>
+											<div class="clear"></div>
+										</a>{% endfor %}
+									</div>
+									<div class="clear"></div>
+								</div>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="banner_y2 center">
+			<div class="nav">
+				<ul>
+                    {% for i in data[7:14] %}
+					<li>
+						<a href="">{{ i['parent'] }}</a>
+                        <div class="pop">
+							<div class="left fl">
+								<div>
+									<div class="xuangou_left fl">
+                                        {% for o in sub[i['parent']] %}
+										<a href="">
+											<span class="fl">{{ o['category_name'] }}</span>
+											<div class="clear"></div>
+										</a>{% endfor %}
+									</div>
+									<div class="clear"></div>
+								</div>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+
+
+
+    <div class="banner_y3 center">
+			<div class="nav">
+				<ul>
+                    {% for i in data[14:20] %}
+					<li>
+						<a href="">{{ i['parent'] }}</a>
+                        <div class="pop">
+							<div class="left fl">
+								<div>
+									<div class="xuangou_left fl">
+                                        {% for o in sub[i['parent']] %}
+										<a href="">
+											<span class="fl">{{ o['category_name'] }}</span>
+											<div class="clear"></div>
+										</a>{% endfor %}
+									</div>
+									<div class="clear"></div>
+								</div>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    <div class="banner_y4 center">
+			<div class="nav">
+				<ul>
+                    {% for i in data[20:26] %}
+					<li>
+						<a href="">{{ i['parent'] }}</a>
+                        <div class="pop">
+							<div class="left fl">
+								<div>
+									<div class="xuangou_left fl">
+                                        {% for o in sub[i['parent']] %}
+										<a href="">
+											<span class="fl">{{ o['category_name'] }}</span>
+											<div class="clear"></div>
+										</a>{% endfor %}
+									</div>
+									<div class="clear"></div>
+								</div>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="banner_y5 center">
+			<div class="nav">
+				<ul>
+                    {% for i in data[26:] %}
+					<li>
+						<a href="">{{ i['parent'] }}</a>
+                        <div class="pop">
+							<div class="left fl">
+								<div>
+									<div class="xuangou_left fl">
+                                        {% for o in sub[i['parent']] %}
+										<a href="">
+											<span class="fl">{{ o['category_name'] }}</span>
+											<div class="clear"></div>
+										</a>{% endfor %}
+									</div>
+									<div class="clear"></div>
+								</div>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+<div class="danpin center">
+
+			<div class="biaoti center">{{cat}}</div>
+			<div class="main center">
+				<h1>Permission Denied</h1>
+
+
+
+	<!-- end banner -->
+
+	<!-- start danpin
+		<div class="danpin center">
+
+			<div class="biaoti center">On Sale</div>
+			<div class="main center">
+				<div class="mingxing fl">
+					<div class="sub_mingxing"><a href=""><img src="../static/img/mingxing1.jpg" alt=""></a></div>
+					<div class="pinpai"><a href="">iPhone 13 Pro Max</a></div>
+					<div class="youhui">Free Delivery</div>
+					<div class="jiage">$1100</div>
+				</div>
+				<div class="mingxing fl">
+					<div class="sub_mingxing"><a href=""><img src="../static/img/mingxing2.jpg" alt=""></a></div>
+					<div class="pinpai"><a href="">Samsung Galaxy S22</a></div>
+					<div class="youhui">Free Delivery</div>
+					<div class="jiage">$850</div>
+				</div>
+				<div class="mingxing fl">
+					<div class="sub_mingxing"><a href=""><img src="../static/img/mingxing1.jpg" alt=""></a></div>
+					<div class="pinpai"><a href="">iPhone 13 Pro Max</a></div>
+					<div class="youhui">Free Delivery</div>
+					<div class="jiage">$1100</div>
+				</div>
+				<div class="mingxing fl">
+					<div class="sub_mingxing"><a href=""><img src="../static/img/mingxing2.jpg" alt=""></a></div>
+					<div class="pinpai"><a href="">Samsung Galaxy S22</a></div>
+					<div class="youhui">Free Delivery</div>
+					<div class="jiage">$850</div>
+				</div>
+				<div class="mingxing fl">
+					<div class="sub_mingxing"><a href=""><img src="../static/img/mingxing1.jpg" alt=""></a></div>
+					<div class="pinpai"><a href="">iPhone 13 Pro Max</a></div>
+					<div class="youhui">Free Delivery</div>
+					<div class="jiage">$1100</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>-->
+		<footer class="mt20 center">
+			<div class="mt20">Nittany Market|Nittany State|Nittany Eats|Nittany Game|Nittany Cloud|Nittany Mobile|Report|Select Region</div>
+			<div>©nittanymarket.com </div>
+			<div>Report：(909)-852-9496，All for test purpose</div>
+		</footer>
+	</body>
+</html>

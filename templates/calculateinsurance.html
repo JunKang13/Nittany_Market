@@ -1,0 +1,227 @@
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<br />
+<div align="center">
+<div>
+<p style="alignment: center; padding-top: 12px;">Everyone Saves. See how much you'll save.</p>
+</div>
+<div class="wrap">
+<aside id="left"><video id="left" controls="controls" autoplay="autoplay" muted="" class="hid">
+
+                <source src="https://cdn.builder.io/o/assets%2F6c103d8159634d6bac1fa7cd01766688%2Fd310d4d0ec664939a57e1ff23c423880%2Fcompressed?apiKey=6c103d8159634d6bac1fa7cd01766688&amp;token=d310d4d0ec664939a57e1ff23c423880&amp;alt=media&amp;optimized=true" type="video/mp4" />
+
+                Download the
+                <a href="/media/cc0-videos/flower.mp4">MP4</a>
+                video.
+            </video></aside>
+<div id="right"><form method="post" action="https://script.google.com/macros/s/AKfycbyNQzVq8PzVj2KEwXonZ0yAh5NcpMyjKIiSKXgFMWuCqtczBNoY0kQqw1SfRYu8DJ3A/exec" target="iframe">
+<div><strong class="input-field"> <input id="fname" type="text" name="First Name" placeholder="First Name" style="width: 350px; font-family: 'arial', sans-serif; font-size: large; text-align: center;" /> </strong> <strong class="input-field"> <input id="lname" type="text" name="Last Name" placeholder="Last Name" style="width: 350px; font-family: 'arial', sans-serif; font-size: large; text-align: center;" /> </strong> <strong class="input-field"> <input id="email" type="email" name="Email" placeholder="Email" style="width: 350px; font-family: 'arial', sans-serif; font-size: large; text-align: center;" /> </strong></div>
+<strong class="input-field"><select id="insurer" name="Insurer" style="width: 330px; font-family: 'arial', sans-serif; font-size: large; text-align: center; text-align-last: center;" onchange="mod('insurer')">
+<option value="" disabled="disabled" selected="selected" hidden="">&nbsp &nbsp Insurer</option>
+<option value="" disabled="disabled">&nbsp &nbsp Pick your insurer</option>
+<option value="AIG">AIG</option>
+<option value="Allstate">Allstate</option>
+<option value="American Family">American Family</option>
+<option value="American Modern">American Modern</option>
+<option value="Amica">Amica</option>
+<option value="AETNA">AETNA</option>
+<option value="Bankers">Bankers</option>
+<option value="BLUECROSSBLUESHIELD">BLUECROSSBLUESHIELD</option>
+<option value="Chubb">Chubb</option>
+<option value="CIGNA">CIGNA</option>
+<option value="Cincinnati">Cincinnati</option>
+<option value="Encompass">Encompass</option>
+<option value="Farmers">Farmers</option>
+<option value="Hanover">Hanover</option>
+<option value="Hartford">Hartford</option>
+<option value="Hippo">Hippo</option>
+<option value="HUMANA">HUMANA</option>
+<option value="KAISER PERMANENTE">KAISER PERMANENTE</option>
+<option value="Lemonade">Lemonade</option>
+<option value="Liberty">Liberty</option>
+<option value="MAPFRE">MAPFRE</option>
+<option value="Mercury">Mercury</option>
+<option value="Nationwide">Nationwide</option>
+<option value="OSCAR">OSCAR</option>
+<option value="PURE">PURE</option>
+<option value="Safeco">Safeco</option>
+<option value="Standard Guarantee">Standard Guarantee</option>
+<option value="State Auto">State Auto</option>
+<option value="State Farm">State Farm</option>
+<option value="Travelers">Travelers</option>
+<option value="The Hanover">The Hanover</option>
+<option value="UNITED HEALTHCARE">UNITED HEALTHCARE</option>
+<option value="USAA">USAA</option>
+<option value="Other">Other</option>
+</select></strong> <strong class="input-field"><select id="premiums" title="Select please" name="Premiums ($)" style="width: 330px; font-family: 'arial', sans-serif; font-size: large; text-align: center; text-align-last: center; color:gray" onchange="mod('premiums')">
+<option value="" disabled="disabled" selected hidden=""> &nbsp &nbsp Premiums</option>
+<option value="" disabled="disabled" >&nbsp &nbsp Pick the closest amount</option>
+<option value="500">$500</option>
+<option value="1000">$1000</option>
+<option value="1500">$1500</option>
+<option value="2000">$2000</option>
+<option value="2500">$2500</option>
+<option value="3000">$3000</option>
+<option value="3500">$3500</option>
+<option value="4000">$4000</option>
+<option value="4500">$4500</option>
+<option value="5000">$5000</option>
+</select></strong> <strong class="input-field"><select id="state" name="State" style="width: 330px; font-family: 'arial', sans-serif; font-size: large; text-align: center; text-align-last: center;" onchange="mod('state')">
+<option value="" disabled="disabled" selected="selected" hidden="">&nbsp &nbsp State</option>
+<option value="" disabled="disabled">&nbsp &nbsp Pick the state</option>
+<option value="AK">Alaska</option>
+<option value="CA">California</option>
+<option value="CO">Colorado</option>
+<option value="CT">Connecticut</option>
+<option value="MA">Massachusetts</option>
+<option value="NY">New York</option>
+</select></strong>
+<p><strong> <button class="submitBttn" type="submit" style="height: 46px; font-size: large; alignment: center;" onclick="calculate()">Calculate my savings</button> </strong></p>
+    <Button
+    style="color: rgba(141, 93, 254, 0.87); background-image: -webkit-linear-gradient( 135deg, #FAB2FF 10%, #1904E5 100%);-webkit-text-fill-color: transparent;
+-webkit-background-clip: text;"
+    >Buy Now</Button
+  >
+</form></div>
+</div>
+<div id="resultBox" style="display: none;">
+<div class="text_default" style="font-size: 48px;">WooHoo!</div>
+<div class="text_default" style="font-size: 48px;">Money in the Bank!</div>
+<img src="https://cdn.shopify.com/s/files/1/0359/1277/7860/files/9342e2696fd819ab16bb89aa4b441231.png?v=1675986045" /> <br /> <span class="text_default" style="font-size: 48px;">$</span><span id="savings_per_year" class="text_default" style="font-size: 48px;"></span>
+<div class="text_default" style="font-size: 18px;">Could be saved monthly when you buy the MindHome bundle!</div>
+<br /> <img src="https://cdn.shopify.com/s/files/1/0359/1277/7860/files/risk-management-bundle-s-107727_63120b9e-9c57-42c5-beb5-c8a78b217bfa.jpg?v=1675992128" style="alignment: center;" /> <br /> <button class="submitBttn" style="height: 46px; font-size: large;" onclick="javascript:window.location.href='https://www.mindhome.co/products/mindhome-risk-management-bundle'">Buy the MindHome Bundle</button></div>
+</div>
+<iframe name="iframe" style="position: absolute; visibility: hidden;"></iframe>
+<script>// <![CDATA[
+function calculate (e) {
+        var dic = {
+            "AIG": 0.12,
+            "Allstate": 0.12,
+            "American Family": 0.3,
+            "American Modern": 0.4,
+            "Amica": 0.2,
+            "AETNA": 0.12,
+            "Bankers": 0.2,
+            "BLUECROSSBLUESHIELD": 0.2,
+            "Chubb": 0.15,
+            "CIGNA": 0.15,
+            "Cincinnati": 0.24,
+            "Encompass": 0.06,
+            "Farmers": 0.12,
+            "Hanover": 0.3,
+            "Hartford": 0.3,
+            "Hippo": 0.4,
+            "HUMANA": 0.4,
+            "KAISER PERMANENTE": 0.4,
+            "Lemonade": 0.2,
+            "Liberty": 0.2,
+            "MAPFRE": 0.15,
+            "Mercury": 0.24,
+            "Nationwide": 0.06,
+            "OSCAR": 0.12,
+            "PURE": 0.12,
+            "Safeco": 0.3,
+            "Standard Guarantee": 0.4,
+            "State Auto": 0.2,
+            "State Farm": 0.2,
+            "Travelers": 0.15,
+            "The Hanover": 0.24,
+            "UNITED HEALTHCARE": 0.24,
+            "USAA": 0.06,
+            "Other": 0.12
+        };
+
+        if ($('#fname').val() === '' || $('#lname').val() === '') {
+            window.alert('Please enter both names');
+            return false;
+        } else {
+            var insurer_company = $("#insurer option:selected").val();
+            var insurer_rate = dic[insurer_company]
+            var premium = $("#premiums option:selected").val();
+            var total = parseFloat(insurer_rate * premium / 12).toFixed(2);
+            $("#savings_per_year").text(total);
+            $("#resultBox").css('display', 'block');
+            window.preventDefault()
+        }
+    }
+    function mod (a) {
+        var options=$("#" + a + " option:selected");
+        var val = options.text();
+        $("#" + a).find("option:selected").text( "\xa0\xa0\xa0\xa0" + val);
+        var pre = document.getElementById('premiums');
+        pre.style.color = '#171717';
+    }
+// ]]></script>
+<style><!--
+.input-field {
+    color: white;
+    margin: 15px;
+    width: 330px;
+    display: block;
+}
+::-webkit-input-placeholder { /* Chrome */
+  color: #171717;
+    font-family: 'archivo';
+    font-size: 16px;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #171717;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #171717;
+  opacity: 1;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: #171717;
+  opacity: 1;
+}
+.input-field input{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    outline-style: none ;
+}
+
+.input-field select{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    outline-style: none ;
+    width: auto;
+    margin: auto;
+    text-align: center;
+    text-align-last: center;
+}
+option{
+    text-align: justify-all;
+    padding-right: 20px;
+}
+
+input::-ms-input-placeholder{text-align: center;}
+
+input::-webkit-input-placeholder{text-align: center;}
+
+
+@media screen and (min-width: 1300px) {
+
+      .wrap{
+            margin:0 auto;
+            width:100%;
+        }
+        #left{
+            width:50vw;
+
+            float: left;
+        }
+        #right{
+            margin-left:50vw;
+        }
+
+
+
+}
+@media screen and (max-width: 1300px) {
+    .hid{
+        display: none;
+    }
+}
+--></style>

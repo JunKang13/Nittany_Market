@@ -1,0 +1,154 @@
+/* Background position set*/
+#login-bg.container-fluid {
+	padding: 0;
+	height: 100%;
+	position: absolute;
+}
+
+/* Background color set*/
+.bg-color {
+	min-width: 100%;
+	vertical-align: top;
+	padding: 0;
+	height: 100%;
+	background-color: #cce5ff;
+	display: inline-block;
+	overflow: hidden;
+}
+
+/* Login div position and font set*/
+#login{
+	padding-top: 10%;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+/* Login div size&color set*/
+.login {
+	width: 100%;
+	height: 500px;
+	background-color: #fff;
+	padding: 30px 15px 15px;
+}
+
+/* Login h1 position set*/
+.login h1 {
+	margin-top: 30px;
+	font-weight: bold;
+	font-size: 60px;
+	letter-spacing: 3px;
+	color: #99ccff;
+}
+
+/* Login form size and margin set*/
+.login form {
+	max-width: 420px;
+	margin: 30px auto;
+}
+
+/* Submit button shape, position, size and color set*/
+.login .btn {
+	border-radius: 50px;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 2px;
+	font-size: 20px;
+	padding: 14px;
+	background: #99ccff;
+	border-color: #99ccff;
+	color: #fff;
+}
+
+
+/* On click submit button, accent color*/
+.login .btn:active{
+    background: #4da6ff;
+}
+
+/* Input data size, font, color and shape set*/
+.form-group input {
+	font-size: 20px;
+	font-weight: lighter;
+	border: none;
+	background-color: #F0F0F0;
+	color: #66b2ff!important;
+	padding: 26px 30px;
+	border-radius: 50px;
+	transition : 0.2s;
+}
+
+/* Slider position set*/
+.form-check {
+	padding: 0;
+	text-align: left;
+}
+
+/* Slider label position, size and color set*/
+.form-check label {
+	vertical-align: top;
+	padding-top: 5px;
+	padding-left: 5px;
+	font-size: 15px;
+	color: #606060;
+	font-size: 14px;
+}
+
+/* forgot password position and font set*/
+.forgot-password {
+	text-align: right;
+	float: right;
+	font-weight: bold;
+}
+
+/* Forgot password color set*/
+.forgot-password a {
+	color: #ffccff;
+}
+
+/* slider switch position, size set */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
+
+/* Slider position, color, transition action, and shape set */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #F0F0F0;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+/* Slider before switching position, size and color and transition action*/
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+/* While checked, color set */
+input:checked + .slider {
+  background-color: #99ccff;
+}
+
+/* While checked, transition action set */
+input:checked + .slider:before {
+  -webkit-transform: translateX(30px);
+  -ms-transform: translateX(30px);
+  transform: translateX(30px);
+}

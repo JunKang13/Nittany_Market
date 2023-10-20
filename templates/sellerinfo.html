@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Personal Info</title>
+		<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+        <script src = "../static/jquery/jquery-3.6.0.js"></script>
+         <script>
+
+            function change(){
+                var pwd = prompt("Please enter your new password");
+                if (pwd != null){
+                    alert("Success!\rYou will be directed to the login page!")
+                }
+                $('#uinfo123').val(pwd)
+                document.xiugaimima.submit()
+
+            }
+
+            function product(){
+
+                var div = document.getElementById('t1');
+                div.style.visibility = 'hidden';
+                div.style.display = 'none';
+
+                var info = document.getElementById('infosel');
+                info.style.fontWeight = 'normal';
+                info.style.color = '#000'
+
+                var div2 = document.getElementById('t2');
+                div2.style.visibility = 'visible';
+                div2.style.display = '';
+
+                var prod = document.getElementById('prod');
+                prod.style.color = '#ff6700';
+                prod.style.fontWeight = 'bold';
+            }
+
+            function myinfo(){
+                var div2 = document.getElementById('t2');
+                div2.style.visibility = 'hidden';
+                div2.style.display = 'none';
+
+
+                var div = document.getElementById('t1');
+                div.style.visibility = 'visible';
+                div.style.display = '';
+
+                var prod = document.getElementById('prod');
+                prod.style.fontWeight = 'normal';
+                prod.style.color = '#000'
+
+                var info = document.getElementById('infosel');
+                info.style.color = '#ff6700';
+                info.style.fontWeight = 'bold';
+            }
+
+
+            $(document).click(function (e){
+              var v_id=e.target.id;
+              if (!isNaN(v_id)){
+                  alert("Success!");
+                  $("#uinfo1234").val(v_id);
+                  document.xiajia.submit();
+              }})
+        </script>
+	</head>
+	<body onload="a() ">
+	<!-- start header -->
+		<header>
+            <div>
+                <form method='post' action='/sellerinfo/1' name="xiajia">
+                    <input type="hidden" name="lid" value="lid" id="uinfo1234"/>
+                </form>
+            </div>
+			<div class="top center">
+				<div class="left fl">
+					<ul>
+						<li><a href="" target="_blank">Nittany Market</a></li>
+						<li>|</li>
+						<li><a href="">Nittany State</a></li>
+						<li>|</li>
+						<li><a href="">Nittany Eats</a></li>
+						<li>|</li>
+						<li><a href="">Nittany Game</a></li>
+						<li>|</li>
+						<li><a href="">Nittany Cloud</a></li>
+						<li>|</li>
+						<li><a href="">Nittany Mobile</a></li>
+						<li>|</li>
+						<li><a href="">Report</a></li>
+						<li>|</li>
+						<li><a href="">Select Region</a></li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+				<div class="right fr">
+					<div class="gouwuche fr"><a href="/login" onclick="alert('Please Log In')">Shopping Cart</a></div>
+					<div class="fr">
+						<ul>
+							<li><a href="info" target="_blank">Hi, Seller</a></li>
+							<li>|</li>
+							<li><a href="/">Log Out</a></li>
+						</ul>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</header>
+	<!--end header -->
+	<!-- start banner_x -->
+		<div class="banner_x center">
+			<a href="./index.html" target="_blank"><div class="logo fl"></div></a>
+			<a href=""><div class="ad_top fl"></div></a>
+			<div class="nav fl">
+				<ul>
+					<li><a href="./liebiao.html" target="_blank">Electrical Supplies</a></li>
+					<li><a href="">Clothing</a></li>
+					<li><a href="">Health Care</a></li>
+					<li><a href="">Pets</a></li>
+					<li><a href="">Sports & Outdoors</a></li>
+					<li><a href="">Grocery</a></li>
+				</ul>
+			</div>
+			<div class="search fr">
+				<form action="" method="post">
+					<div class="text fl">
+						<input type="text" class="shuru"  placeholder="iPhone 13">
+					</div>
+					<div class="submit fl">
+						<input type="submit" class="sousuo" value="Search"/>
+					</div>
+					<div class="clear"></div>
+				</form>
+				<div class="clear"></div>
+			</div>
+		</div>
+<!-- end banner_x -->
+<!-- self_info -->
+	<div class="grzxbj">
+		<div class="selfinfo center">
+		<div class="lfnav fl">
+			<div class="ddzx">Orders</div>
+			<div class="subddzx">
+				<ul>
+					<li><a id="prod" onclick="product()">My Products</a></li>
+				</ul>
+			</div>
+			<div class="ddzx">Personal</div>
+			<div class="subddzx">
+				<ul>
+					<li><a style="color:#ff6700;font-weight:bold;" id="infosel" onclick="myinfo()">My Info</a></li>
+					<li><a href="">Messages</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="rtcont fr" id="t1">
+			<div class="grzlbt ml40">My Info</div>
+			<div class="subgrzl ml40"><span>ID</span><span id="uinfo2">{{ email }}</span><span><a id="cm" onclick="change()">Change Password</a></span></div>
+            <form method='post' action='/info1' name="xiugaimima">
+                <input type="hidden" name="pwd" value="pwd" id="uinfo123"/>
+                <input type="hidden" name="email" value= {{ email }} id="uinfoemail"/>
+            </form>
+			<div class="subgrzl ml40"><span>Balance</span><span id="uinfo3">{{ balance }}</span><span><a href="">View</a></span></div>
+			<div class="subgrzl ml40"><span>Ratings</span><span id="uinfo4">{{ rating }}</span><span><a href="">View</a></span></div>
+			
+		</div>
+
+        <div class="rtcont fr" id="t2" style="visibility: hidden; display: none">
+        <div class="grzlbt ml40">My Products</div>
+        {% for i in product %}
+        <div class="subgrzl1 ml40"><span>Name</span><span id="uinfo2">{{ i['title'] }} {{ i['product_name'] }} {{ i['v_product'] }}</span><span><a >View &nbsp;&nbsp;&nbsp;</a><a id="{{ i['listing_id'] }}">Unlist</a></span></div>
+        {% endfor %}
+		</div>
+		<div class="clear"></div>
+		</div>
+	</div>
+<!-- self_info -->
+		
+    <footer class="mt20 center">
+			<div class="mt20">Nittany Market|Nittany State|Nittany Eats|Nittany Game|Nittany Cloud|Nittany Mobile|Report|Select Region</div>
+			<div>©nittanymarket.com </div>
+			<div>Report：(909)-852-9496，All for test purpose</div>
+		</footer>
+	</body>
+</html>
